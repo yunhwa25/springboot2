@@ -60,6 +60,9 @@ dependencies {
 //    implementation 'com.querydsl:querydsl-apt:5.1.0:jakarta'
     // Querydsl 사용 설정 부분 ==========================================>
 
+    // https://mvnrepository.com/artifact/org.modelmapper/modelmapper
+    implementation 'org.modelmapper:modelmapper:3.2.0'
+
 
 
 }

@@ -6,6 +6,7 @@ import org.fullstack4.springboot2.domain.BoardEntity;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 
@@ -44,7 +45,7 @@ public class BoardRepositoryTests {
                             .build();
 
                     BoardEntity bbsResult = boardRepository.save(bbs); // save는 JPA에 있는 메서드 그대로 쓰는 것. 우리가 만들어 준 적 없음
-                    log.info("result : " + bbsResult);
+                    log.info("result : {} ", bbsResult);
                 });
         log.info("BoardRepositoryTest >> testRegist END");
         log.info("============================");
@@ -120,13 +121,30 @@ public class BoardRepositoryTests {
     @Test
     public void testSearch() {
         log.info("============================");
-        log.info("BoardRepositoryTest >> testList START");
+        log.info("BoardRepositoryTest >> testSearch START");
 
         // 여기가 order by와 limit 부분
         PageRequest pageable = PageRequest.of(0, 10, Sort.by("idx").descending());
-        boardRepository.search(pageable);
+        Page<BoardEntity> result = boardRepository.search(pageable);
 
-        log.info("BoardRepositoryTest >> testList END");
+        log.info("result : {}", result);
+        log.info("result.toList() : {}", result.toList());
+        log.info("BoardRepositoryTest >> testSearch END");
+        log.info("============================");
+    }
+
+    @Test
+    public void testSearch2() {
+        log.info("============================");
+        log.info("BoardRepositoryTest >> testSearch2 START");
+
+        // 여기가 order by와 limit 부분
+        PageRequest pageable = PageRequest.of(0, 10, Sort.by("idx").descending());
+        String[] types = {"t", "c", "u"};
+        String search_keyword = "내용 1";
+        boardRepository.search2(pageable, types, search_keyword);
+
+        log.info("BoardRepositoryTest >> testSearch2 END");
         log.info("============================");
     }
 }
