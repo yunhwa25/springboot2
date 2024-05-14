@@ -63,4 +63,15 @@ public class BoardServiceTests {
         log.info("=================================");
     }
 
+    @Test
+    public void testDelete() {
+        log.info("=================================");
+        log.info("BoardServiceTests >> testDelete START");
+        int idx = 13;
+        boardService.delete(idx);
+
+        log.info("BoardServiceTests >> testDelete END");
+        log.info("=================================");
+    }
+
 }

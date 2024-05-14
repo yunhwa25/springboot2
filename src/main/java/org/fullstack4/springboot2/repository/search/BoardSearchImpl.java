@@ -93,6 +93,6 @@ public class BoardSearchImpl extends QuerydslRepositorySupport implements BoardS
         log.info("BoardSearchImpl >> search2 END");
         log.info("==============================");
 
-        return null;
+        return new PageImpl<>(boards, pageable, total);
     }
 }

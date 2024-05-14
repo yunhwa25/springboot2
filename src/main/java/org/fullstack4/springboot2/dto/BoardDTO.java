@@ -1,5 +1,7 @@
 package org.fullstack4.springboot2.dto;
 
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -13,8 +15,13 @@ import java.time.LocalDateTime;
 @Builder
 public class BoardDTO {
     private int idx;
+
+    @NotEmpty
     private String user_id;
+    @NotEmpty
+    @Size(min=1, max=100)
     private String title;
+    @NotEmpty
     private String content;
     private String display_date;
     private LocalDateTime reg_date;
