@@ -32,7 +32,7 @@
                         <input type="text" name="modify_date" class="form-control" th:value="${dto.modify_date}" readonly />
                     </div>
                     <div class="my-4">
-                        <div class="float-end" th:with="link=${pageRequestDTO.linkParams}">
+                        <div class="float-end" th:with="link=${pageRequestDTO.getLinkParams()}">
                             <a th:href="|@{/board/list}?${link}|" class="text-decoration-none">
                                 <button type="button" class="btn btn-primary">목록</button>
                             </a>

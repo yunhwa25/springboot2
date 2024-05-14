@@ -24,7 +24,7 @@
                         <tbody>
                             <tr th:each="dto:${pageResponseDTO.dtoList}">
                                 <th scope="row">[[${dto.idx}]]</th>
-                                <td><a th:href="|@{/board/view(idx=${dto.idx})}&${link}|">[[${dto.title}]]</a></td>
+                                <td><a th:href="|@{/board/view(idx=${dto.idx})}&${pageRequestDTO.getLinkParams}|">[[${dto.title}]]</a></td>
                                 <td>[[${dto.user_id}]]</td>
                                 <td>[[${dto.display_date}]]</td>
                             </tr>

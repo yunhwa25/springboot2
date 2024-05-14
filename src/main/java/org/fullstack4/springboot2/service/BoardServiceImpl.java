@@ -57,7 +57,7 @@ public class BoardServiceImpl implements BoardServiceIf {
     public PageResponseDTO<BoardDTO> list(PageRequestDTO pageRequestDTO) {
         String[] types = pageRequestDTO.getSearch_types();
         String search_word = pageRequestDTO.getSearch_word();
-        PageRequest pageable = pageRequestDTO.getPageable();
+        PageRequest pageable = pageRequestDTO.getPageable("idx");
         Page<BoardEntity> result = boardRepository.search2(pageable, types, search_word);
 
         List<BoardDTO> dtoList = result.getContent().stream()
