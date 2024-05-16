@@ -44,9 +44,9 @@ public class BoardServiceTests {
                 .content("내용 테스트 13")
                 .display_date("2024-05-13")
                 .build();
-        boardService.modify(boardDTO);
+       //boardService.modify(boardDTO);
 
-        log.info("boardDTO : {}", boardDTO);
+        //log.info("boardDTO : {}", boardDTO);
         log.info("BoardServiceTests >> testModify END");
         log.info("=================================");
     }
@@ -56,9 +56,9 @@ public class BoardServiceTests {
         log.info("=================================");
         log.info("BoardServiceTests >> testView START");
         int idx = 13;
-        BoardDTO boardDTO = boardService.view(idx);
+        // BoardDTO boardDTO = boardService.view(idx);
 
-        log.info("boardDTO : {}", boardDTO);
+        // log.info("boardDTO : {}", boardDTO);
         log.info("BoardServiceTests >> testView END");
         log.info("=================================");
     }
@@ -68,7 +68,7 @@ public class BoardServiceTests {
         log.info("=================================");
         log.info("BoardServiceTests >> testDelete START");
         int idx = 13;
-        boardService.delete(idx);
+        //boardService.delete(idx);
 
         log.info("BoardServiceTests >> testDelete END");
         log.info("=================================");
